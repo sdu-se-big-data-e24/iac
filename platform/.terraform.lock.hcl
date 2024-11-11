@@ -62,3 +62,23 @@ provider "registry.terraform.io/hashicorp/kubernetes" {
     "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
   ]
 }
+
+provider "registry.terraform.io/mongey/kafka" {
+  version = "0.8.1"
+  hashes = [
+    "h1:6gdY6/HVNuWMOHXl8Oax1azUY+SWilOXJk1Mi/DsvKI=",
+    "zh:0375d0e74763a23b590e2e793b53d6450ce1b89a3ea839b9f981c5ae291e2407",
+    "zh:049427cdf40326de9cc23c0dc9ad3684d1e1a8138d5135b2c0a7bf5980cbcacf",
+    "zh:402081989122de685c3791850f28e479ebd5454823a059827139c5b4a7e303b5",
+    "zh:46de197032f859993f31d4dd2188b93f432e6a47ef10adacfce713b6234e2deb",
+    "zh:4f2f3bad92fe235c3d685ecdc142a08b8b6b77757060dfccfe5590d1dc6ba153",
+    "zh:51a37ce12d984bbb49dcc0243fa0c4cd99d02ee61b4ff2f68ac56ef3d88b5066",
+    "zh:6566cc8ded99f299918aa3d873f8929810238aada8e0a080e6e4309ecc7c4417",
+    "zh:751d59e65f90461500e2f302650e6f85ec159c468d73b0d887904fc150b73d08",
+    "zh:9ba0275ab902f14b5ff276ace396620abc0cc956cd3382da25e20590b0a0ae2d",
+    "zh:9eab072711d8a2456b03579a8983bfce75dc2de757300ddc594392c875c8dc1c",
+    "zh:a427f3f9a13d6e1db83c2e5ab8a8aae5adfe5531a901c0f0228082469542bc6e",
+    "zh:a5406bfe3b4666cbd2a99c10e9c37481c42dd760165e93b101cf2288d0435dcb",
+    "zh:ac0f88551d8295b62ca7c94cb5d1bff7de9192cae8b478c1ebc22acecfb50143",
+  ]
+}
