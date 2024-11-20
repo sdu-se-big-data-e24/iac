@@ -52,7 +52,8 @@ provider "helm" {
 }
 
 provider "kafka" {
-  bootstrap_servers = "kafka.kafka.svc.cluster.local:9092"
+  bootstrap_servers = ["localhost:9092"]
+  kafka_version = "3.8.0"
 }
 
 # ----------------------

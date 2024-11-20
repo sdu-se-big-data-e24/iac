@@ -23,22 +23,3 @@ resource "kafka_topic" "syslog" {
   depends_on = [kafka_acl.global]
 }
 
-resource "kafka_acl" "test" {
-  resource_name       = "syslog"
-  resource_type       = "Topic"
-  acl_principal       = "User:Alice"
-  acl_host            = "*"
-  acl_operation       = "Write"
-  acl_permission_type = "Deny"
-
-  depends_on = [kafka_acl.global]
-}
-
-resource "kafka_quota" "quota1" {
-  entity_name = "client1"
-  entity_type = "client-id"
-  config = {
-    "consumer_byte_rate" = "4000000"
-    "producer_byte_rate" = "3500000"
-  }
-}

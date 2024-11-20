@@ -24,6 +24,10 @@ resource "kubernetes_config_map_v1" "redpanda_config" {
     CONNECT_CLUSTERS_NAME        = "Connectors"
     CONNECT_CLUSTERS_URL         = "http://kafka-connect:8083"
   }
+
+  depends_on = [
+    helm_release.kafka
+  ]
 }
 
 resource "kubernetes_deployment_v1" "redpanda" {
@@ -60,6 +64,10 @@ resource "kubernetes_deployment_v1" "redpanda" {
       }
     }
   }
+
+  depends_on = [
+    kubernetes_config_map_v1.redpanda_config
+  ]
 }
 
 resource "kubernetes_service_v1" "redpanda" {
@@ -78,4 +86,8 @@ resource "kubernetes_service_v1" "redpanda" {
       target_port = 8080
     }
   }
+
+  depends_on = [
+    kubernetes_deployment_v1.redpanda
+  ]
 }
