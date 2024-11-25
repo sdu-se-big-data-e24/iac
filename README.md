@@ -1,4 +1,4 @@
-# Infrastrcutre as Code (IaC)
+# Infrastructure as Code (IaC)
 
 ## Setup
 
