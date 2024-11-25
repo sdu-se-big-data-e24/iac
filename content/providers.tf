@@ -21,8 +21,12 @@ terraform {
       version = ">= 2.16.1"
     }
 
-	kafka = {
+    kafka = {
       source = "Mongey/kafka"
+    }
+
+    kafka-connect = {
+      source = "Mongey/kafka-connect"
     }
   }
 }
@@ -53,7 +57,12 @@ provider "helm" {
 
 provider "kafka" {
   bootstrap_servers = ["localhost:9092"]
-  kafka_version = "3.8.0"
+  kafka_version     = "3.8.0"
+}
+
+provider "kafka-connect" {
+  url                  = "http://localhost:8083"
+  tls_auth_is_insecure = true # Optionnal if you do not want to check CA 
 }
 
 # ----------------------

@@ -82,3 +82,22 @@ provider "registry.terraform.io/mongey/kafka" {
     "zh:ac0f88551d8295b62ca7c94cb5d1bff7de9192cae8b478c1ebc22acecfb50143",
   ]
 }
+
+provider "registry.terraform.io/mongey/kafka-connect" {
+  version = "0.4.1"
+  hashes = [
+    "h1:sHB8qdSfjRdTuADGs/IPNYkBDlogIPEg8oDrnPl5te4=",
+    "zh:2007023eefdfc6f09a829a1e66811be983e52550034de7fa9c6047b2f3cbcd14",
+    "zh:48087278a81ed6d4047987d6d44afb28e91c2213e93c52c1e63d34f4be1a2636",
+    "zh:49b2289fb95b6e4a766e303b6c4962313d3fdd60de81ac1f6767bdab474d4217",
+    "zh:586b7662db54bf670dc38ddae1f2c51e766553903bb45441560b708d8040bfc3",
+    "zh:71d3aa2977ad55294b704d85b57a91c8fc196596774908b45d0656a9956ee175",
+    "zh:9febad28f985bd3af24b66c742bbf727f78da769b20f040ea595bb15d8b62eb1",
+    "zh:a44068f795f76126823bfde93427d2ce3b56254a64510d0f9cf1fcf82a707e63",
+    "zh:aba2695a2f6491c64fe5cc2c30d97e3bd2ad37dfeec12ccb6b15d0ba37555025",
+    "zh:ce1598b230934b99d4e664f7a77c1a144b38eedc7b6776eb4724bb7fc1e5dfa8",
+    "zh:e833c4cd977d91bbc960284fde6ee5f097ad7504c6b463f47a81b4d82a922a1b",
+    "zh:ec6ccd8abc26a2e19c818526f9f9e8d6504e74b16e488e48740afcd63c80c722",
+    "zh:f7cdf737138667ab34964a76f59bccaebbe67256fdcb207dcfa351548679f782",
+  ]
+}
