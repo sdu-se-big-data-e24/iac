@@ -28,22 +28,22 @@ terraform {
 # ----------------------
 
 locals {
-  kube_config = yamldecode(file("${path.module}/../${var.kube_config_file}"))
+  kube_config = yamldecode(file("${path.module}/../${local.config_file}"))
 }
 
 provider "kubernetes" {
-  config_path = "${path.module}/../${var.kube_config_file}"
+  config_path = "${path.module}/../${local.config_file}"
 }
 
 provider "kubectl" {
   load_config_file = false
 
-  config_path = "${path.module}/../${var.kube_config_file}"
+  config_path = "${path.module}/../${local.config_file}"
 }
 
 provider "helm" {
   kubernetes {
-    config_path = "${path.module}/../${var.kube_config_file}"
+    config_path = "${path.module}/../${local.config_file}"
   }
 }
 
@@ -51,16 +51,13 @@ provider "helm" {
 # Variables
 # ----------------------
 
-variable "kube_config_file" {
-  description = "Path to the kubeconfig file (Default: kubectl-config/config.yaml)"
-  type        = string
-  default     = "kubectl-config/group-02-kubeconfig.yaml"
-}
-
 variable "namespace" {
   description = "The namespace to deploy the system to"
   type        = string
-  default     = "group-02"
+}
+
+locals {
+  config_file = "kubectl-config/${var.namespace}-kubeconfig.yaml"
 }
 
 variable "argocd_admin_password" {
