@@ -56,7 +56,7 @@ resource "kubernetes_deployment" "producer_energinet_consumption_industry" {
 
           # env {
           #   name  = "FROM_DATE"
-          #   value = "2021-01-01T00:00:00Z"
+          #   value = "2024-11-01"
           # }
 
           # env {
@@ -80,7 +80,7 @@ resource "kubernetes_deployment" "producer_energinet_consumption_industry" {
           }
 
           env {
-            name = "VALUE_SCHEMA_SUBJECT"
+            name  = "VALUE_SCHEMA_SUBJECT"
             value = "ProductionConsumptionSettlement-value"
           }
 
@@ -106,12 +106,12 @@ resource "kubernetes_deployment" "producer_energinet_consumption_industry" {
 
           env {
             name  = "REDIS_DB"
-            value = "0"
+            value = "0" # Database number (0-15)
           }
 
           env {
             name  = "SLEEP_DELAY"
-            value = "60"
+            value = 60
           }
 
           volume_mount {

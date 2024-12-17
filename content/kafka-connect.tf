@@ -45,8 +45,8 @@ resource "kafka-connect_connector" "hdfs-sink-parquet" {
     "key.converter.schemas.enable"        = "false",
     "key.converter"                       = "org.apache.kafka.connect.storage.StringConverter",
     "key.converter.schema.registry.url"   = "http://kafka-schema-registry:8081",
-    "value.converter.schemas.enable"      = "false",
-    "value.converter.schema.registry.url" = "http://kafka-schema-registry:8081",
+    "value.converter.schemas.enable"      = "true",
     "value.converter"                     = "io.confluent.connect.avro.AvroConverter"
+    "value.converter.schema.registry.url" = "http://kafka-schema-registry:8081",
   }
 }
