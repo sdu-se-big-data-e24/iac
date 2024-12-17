@@ -2,3 +2,4 @@
 
 ../scripts/portforward/all.sh
 
+terraform apply

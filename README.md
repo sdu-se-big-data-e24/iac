@@ -33,6 +33,12 @@ terraform plan
 terraform apply
 ```
 
+When running the `terraform apply` command, you will be prompted to enter the namespace to deploy to. If you want to automate this, you can add a `data.auto.tfvars` file in the directory, with the following content:
+
+```hcl
+namespace="group-02"
+```
+
 ## Cleanup
 
 To destroy the infrastructure, run the following command:

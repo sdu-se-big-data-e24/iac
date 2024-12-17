@@ -1,6 +1,7 @@
 locals {
   topics = {
-    "production-consumption-settlement" = true
+    "ConsumptionIndustry"             = true
+    "ProductionConsumptionSettlement" = true
   }
 }
 

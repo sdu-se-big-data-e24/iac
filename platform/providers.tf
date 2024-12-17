@@ -59,9 +59,3 @@ variable "namespace" {
 locals {
   config_file = "kubectl-config/${var.namespace}-kubeconfig.yaml"
 }
-
-variable "argocd_admin_password" {
-  description = "The password for the ArgoCD admin user"
-  type        = string
-  default     = "group-02"
-}

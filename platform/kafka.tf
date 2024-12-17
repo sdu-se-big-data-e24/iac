@@ -18,9 +18,9 @@ resource "kubernetes_config_map_v1" "redpanda_config" {
   }
   data = {
     KAFKA_BROKERS                = "kafka:9092"
-    KAFKA_SCHEMAREGISTRY_ENABLED = "false"
+    KAFKA_SCHEMAREGISTRY_ENABLED = "true"
     KAFKA_SCHEMAREGISTRY_URLS    = "http://kafka-schema-registry:8081"
-    CONNECT_ENABLED              = "false"
+    CONNECT_ENABLED              = "true"
     CONNECT_CLUSTERS_NAME        = "Connectors"
     CONNECT_CLUSTERS_URL         = "http://kafka-connect:8083"
   }
