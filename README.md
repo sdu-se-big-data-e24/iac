@@ -2,7 +2,8 @@
 
 ## Setup
 
-To get started, please add the group kubernetes connection yaml file into `kubectl-config` directory, with the name `group-02-kubeconfig.yaml`.
+To get started, please add the group kubernetes connection yaml file into `kubectl-config` directory, with the name `group-02-kubeconfig.yaml`.  
+*To use your own namespace and context, you can add your own file to `kubectl-config` with `<namespace>-kubeconfig.yaml`, and give that as the namespace to Terraform.*
 
 To then use the kubectl to interact with the cluster, run the following command:
 
