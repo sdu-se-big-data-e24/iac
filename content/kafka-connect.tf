@@ -1,7 +1,9 @@
 locals {
   topics = {
-    "ConsumptionIndustry"             = true
-    "ProductionConsumptionSettlement" = true
+    "production_and_consumption_settlement"                             = true
+    "power_system_right_now"                                            = true
+    "datahub_price_list"                                                = true
+    "consumption_per_industry_public_and_private_municipality_and_hour" = true
   }
 }
 
@@ -13,10 +15,11 @@ resource "kafka-connect_connector" "hdfs-sink-avro" {
   config = {
     "name"                                = "hdfs-sink-avro-${each.key}",
     "connector.class"                     = "io.confluent.connect.hdfs.HdfsSinkConnector",
+    "topics.dir"                          = "/data/avro/topics",
     "tasks.max"                           = "10",
     "topics"                              = each.key,
     "hdfs.url"                            = "hdfs://namenode:9000",
-    "flush.size"                          = "5",
+    "flush.size"                          = "100",
     "rotate.interval.ms"                  = "3600000", # 1 hour
     "format.class"                        = "io.confluent.connect.hdfs.avro.AvroFormat",
     "key.converter.schemas.enable"        = "false",
@@ -36,6 +39,7 @@ resource "kafka-connect_connector" "hdfs-sink-parquet" {
   config = {
     "name"                                = "hdfs-sink-parquet-${each.key}",
     "connector.class"                     = "io.confluent.connect.hdfs.HdfsSinkConnector",
+    "topics.dir"                          = "/data/parquet/topics",
     "tasks.max"                           = "5",
     "topics"                              = each.key,
     "hdfs.url"                            = "hdfs://namenode:9000",
