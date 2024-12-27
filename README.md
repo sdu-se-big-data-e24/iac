@@ -1,5 +1,23 @@
 # Infrastructure as Code (IaC)
 
+## Project structure
+
+In order to run the terraform code, you need to have two other repositories cloned, as they are used as modules in the code.
+
+The tree structure should look like this:
+
+```
+├── data-processing
+├── iac
+└── schema
+```
+
+`iac` is the directory for this repository.  
+With the `schema` and `data-processing` directories being the other repositories.
+
+- schema: [sdu-se-big-data-e24/schema](https://github.com/sdu-se-big-data-e24/schema)
+- data-processing: [sdu-se-big-data-e24/data-processing](https://github.com/sdu-se-big-data-e24/data-processing)
+
 ## Setup
 
 To get started, please add the group kubernetes connection yaml file into `kubectl-config` directory, with the name `group-02-kubeconfig.yaml`.  
