@@ -19,7 +19,7 @@ resource "kafka-connect_connector" "hdfs-sink-avro" {
     "tasks.max"                           = "10",
     "topics"                              = each.key,
     "hdfs.url"                            = "hdfs://namenode:9000",
-    "flush.size"                          = "100",
+    "flush.size"                          = "1000",
     "rotate.interval.ms"                  = "3600000", # 1 hour
     "format.class"                        = "io.confluent.connect.hdfs.avro.AvroFormat",
     "key.converter.schemas.enable"        = "false",
@@ -43,7 +43,7 @@ resource "kafka-connect_connector" "hdfs-sink-parquet" {
     "tasks.max"                           = "5",
     "topics"                              = each.key,
     "hdfs.url"                            = "hdfs://namenode:9000",
-    "flush.size"                          = "5000",
+    "flush.size"                          = "50000",
     "rotate.interval.ms"                  = "86400000", # 1 day
     "format.class"                        = "io.confluent.connect.hdfs.parquet.ParquetFormat",
     "key.converter.schemas.enable"        = "false",

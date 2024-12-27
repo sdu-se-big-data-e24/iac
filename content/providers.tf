@@ -71,7 +71,7 @@ provider "kafka-connect" {
 }
 
 provider "schemaregistry" {
-  uri = "http://localhost:8081"
+  uri = "http://localhost:8082"
 }
 
 # ----------------------
