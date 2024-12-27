@@ -44,7 +44,7 @@ resource "kafka-connect_connector" "hdfs-sink-parquet" {
     "topics"                              = each.key,
     "hdfs.url"                            = "hdfs://namenode:9000",
     "flush.size"                          = "5000",
-    "rotate.interval.ms"                  = "3600000", # 1 hour
+    "rotate.interval.ms"                  = "86400000", # 1 day
     "format.class"                        = "io.confluent.connect.hdfs.parquet.ParquetFormat",
     "key.converter.schemas.enable"        = "false",
     "key.converter"                       = "org.apache.kafka.connect.storage.StringConverter",
